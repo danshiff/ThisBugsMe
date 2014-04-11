@@ -1,0 +1,10 @@
+<% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= form_for @user do |f| %>
+	<p> Enter your name </p>
+	<%= f.text_field :name %>
+
+	<%= f.submit "Submit" %>
+<% end %>

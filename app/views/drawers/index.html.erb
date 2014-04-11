@@ -1,0 +1,9 @@
+<h2> List of Drawers </h2>
+
+<p> <%= link_to "Add a drawer", "/drawers/new" %> </p>
+
+<ul>
+	<% @drawers.each do |d| %>
+		<li> <%=link_to d.name, "/drawers/#{d.name}" %> </li>
+	<% end %>
+</ul>

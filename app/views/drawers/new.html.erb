@@ -1,0 +1,7 @@
+<h3> Add a drawer </h3>
+
+<%= form_for @drawer do |f| %>
+	What's the drawer's index string?
+	<%= f.text_field :name %>
+	<%= f.submit "Add drawer" %>
+<% end %>

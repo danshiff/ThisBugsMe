@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ThisBugsMe</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if session[:user] %>
+<h1> <%= "Welcome #{User.find_by(id: session[:user]).name}" %> </h1>
+<p> Not you? Then please <%= link_to "sign out", "/sessions/#{session[:user]}", method: :delete %> </p> 
+<% end %>
+<%= yield %>
+
+</body>
+</html>

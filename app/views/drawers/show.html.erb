@@ -1,0 +1,20 @@
+<p> <%= link_to "Back to list of drawers", "/drawers" %>
+
+<h3> <%= "Drawer #{@drawer.name}" %> </h3>
+
+<h4> Records </h4>
+<p> <%=link_to "Add new record", "/drawers/#{@drawer.name}/newrecord", method: :post %> </p>
+<% @connections.each do |c| %>
+	<p> 
+		<%= "Record of boxes from #{c.user.name}" %>
+		<% if session[:user] == c.user.id %>
+			<%= link_to "Destroy record", "/connections/#{c.id}", method: :delete %>
+		<% end %>
+	</p>
+	<% c.containers.each do |b| %>
+		<div>
+			<%= "Box #{b.box_num}" %>
+			<br/> <%= "Total Bugs: #{b.num_bugs}" %>
+		</div>
+	<% end %>
+<% end %>

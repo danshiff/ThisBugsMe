@@ -1,0 +1,9 @@
+<h3> <%= "Drawer #{@box.drawer.name}, box #{@box.box_num}" %> </h3>
+
+<%= form_for @box do |f| %>
+	How many bugs does it have?
+	<%= f.number_field :num_bugs %>
+
+	<%= f.submit "Add another box" %>
+	<%= f.submit "No more boxes" %>
+<% end %>
