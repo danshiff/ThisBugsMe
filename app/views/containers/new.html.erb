@@ -1,9 +1,56 @@
 <h3> <%= "Drawer #{@box.drawer.name}, box #{@box.box_num}" %> </h3>
 
 <%= form_for @box do |f| %>
-	How many bugs does it have?
-	<%= f.number_field :num_bugs %>
-
-	<%= f.submit "Add another box" %>
-	<%= f.submit "No more boxes" %>
+	<div>
+		What type is it
+		<%= f.select :box_type, options_for_select(Container.gettypes().zip(Container.gettypes())) %>
+	</div>
+	<div>
+		How many bugs does it have?
+		<%= f.number_field :num_bugs %>
+	</div>
+	<div>
+		Smallest bug
+		<%= f.select :smallest_bug, options_for_select(Container.getsizes().zip(Container.getsizes())) %>
+		Biggest bug
+		<%= f.select :biggest_bug, options_for_select(Container.getsizes().zip(Container.getsizes())) %>
+	</div>
+	<div>
+		Unique bugs: min guess
+		<%= f.number_field :min_unique %>
+		max guess
+		<%= f.number_field :max_unique %>
+	</div>
+	<div>
+		Unique labels (leave blank if unsure)
+		<%= f.number_field :uniq_labels %>
+	</div>
+	<div>
+		Typed labels
+		<%= f.number_field :typed_labels %>
+		Handwritten
+		<%= f.number_field :handwritten_labels %>
+		Unsure
+		<%= f.number_field :unsure_labels %>
+	</div>
+	<div>
+		Obstructed Labels
+		<%= f.number_field :obstructed_labels %>
+	</div>
+	<div>
+		Damaged Labels
+		<%= f.number_field :damaged_labels %>
+	</div>		
+	<div>
+		Label in box?
+		<%= f.select :in_box_label, options_for_select(Container.getlabels().zip(Container.getlabels())) %>
+		Label on box side?
+		<%= f.select :on_box_label, options_for_select(Container.getlabels().zip(Container.getlabels())) %>
+		Label next to box?
+		<%= f.select :near_box_label, options_for_select(Container.getlabels().zip(Container.getlabels())) %>
+	</div>
+	<div>
+		<%= f.submit "Add another box" %>
+		<%= f.submit "No more boxes" %>
+	</div>
 <% end %>

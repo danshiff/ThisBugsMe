@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410223730) do
+ActiveRecord::Schema.define(version: 20140417233942) do
 
   create_table "connections", force: true do |t|
     t.integer  "user_id"
@@ -26,6 +26,20 @@ ActiveRecord::Schema.define(version: 20140410223730) do
     t.datetime "updated_at"
     t.integer  "num_bugs"
     t.integer  "box_num"
+    t.integer  "min_unique"
+    t.integer  "max_unique"
+    t.integer  "uniq_labels"
+    t.integer  "typed_labels"
+    t.integer  "handwritten_labels"
+    t.integer  "unsure_labels"
+    t.integer  "obstructed_labels"
+    t.integer  "damaged_labels"
+    t.string   "biggest_bug"
+    t.string   "smallest_bug"
+    t.string   "in_box_label"
+    t.string   "on_box_label"
+    t.string   "near_box_label"
+    t.string   "box_type"
   end
 
   create_table "drawers", force: true do |t|

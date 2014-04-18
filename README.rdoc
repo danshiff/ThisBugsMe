@@ -1,28 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+To install rails, follow the instructions at http://www.jeffcohenonline.com/installing-rails
+After that open a terminal. Change directories until you're in the ThisBugsMe directory.
+From bash, enter the command bundle install
+From bash, enter the command rake db:migrate
+Now you can start a rails server by entering rails server in bash.
+From there you can access the site by opening a browser window and going to localhost:3000 or 0.0.0.0:3000 .
+You can also manipulate the underlying database tables from the terminal by typing rails console in bash.
+The model names are Drawer, Container (for boxes), and Connection (for a user's record).
+To access a Drawer with a particular name n enter Drawer.find_by(name: "n") to the console.
+To access a drawer d's records do d.connections.
+To access a record r's boxes do r.containers.
+The first of the three methods shown above gives you a Drawer object. The later two give you an array of (Connection, Container) objects.
+To get a specific container, you could do r.containers.find_by(box_num: <the num you're interested in>)
+or r.containers.first, or r.containers.last.

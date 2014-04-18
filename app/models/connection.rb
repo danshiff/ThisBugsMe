@@ -2,5 +2,5 @@ class Connection < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :drawer
 
-	has_many :containers
+	has_many :containers, dependent: :destroy
 end
