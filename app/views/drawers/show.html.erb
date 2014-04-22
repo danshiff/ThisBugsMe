@@ -13,8 +13,9 @@
 	</p>
 	<% c.containers.each do |b| %>
 		<div>
-			<%= "Box #{b.box_num}" %>
-			<br/> <%= "Total Bugs: #{b.num_bugs}" %>
+			<%= "Box #{b.box_num}, #{b.box_type}" %>
+			<br/> <%= "Total Bugs: #{b.num_bugs}, unique: #{b.min_unique}:#{b.max_unique}, sizes: #{b.smallest_bug}:#{b.biggest_bug}" %>
+			<br/> <%= "Handwritten: #{b.handwritten_labels}, typed: #{b.typed_labels}, obstructed: #{b.obstructed_labels}, damaged: #{b.damaged_labels}, unique labels: #{b.uniq_labels}. On box: #{b.on_box_label}, In box: #{b.in_box_label}, Next to box: #{b.near_box_label}" %>
 		</div>
 	<% end %>
 <% end %>
