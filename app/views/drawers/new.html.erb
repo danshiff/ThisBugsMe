@@ -3,5 +3,11 @@
 <%= form_for @drawer do |f| %>
 	What's the drawer's index string?
 	<%= f.text_field :name %>
+	<br/>
+	Website url
+	<%= f.url_field :photo_url %>
 	<%= f.submit "Add drawer" %>
+
+	
+
 <% end %>

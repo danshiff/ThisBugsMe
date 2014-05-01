@@ -21,6 +21,7 @@ class DrawersController < ApplicationController
 	def create
 		@drawer = Drawer.new
 		@drawer.name = params[:drawer][:name]
+		@drawer.photo_url = params[:drawer][:photo_url]
 		@drawer.save
 		redirect_to "/drawers/#{@drawer.name}"
 	end
