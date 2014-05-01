@@ -2,7 +2,7 @@
 
 <h3> <%= "Drawer #{@drawer.name}" %> </h3>
 
-<%= image_tag @drawer.photo_url %>
+<%= image_tag @drawer.photo_url, size: "400x400" %>
 
 <h4> Records </h4>
 <p> <%=link_to "Add new record", "/drawers/#{@drawer.name}/newrecord", method: :post %> </p>
