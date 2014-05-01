@@ -35,4 +35,13 @@ class DrawersController < ApplicationController
 		redirect_to "/record/#{@connection.id}/newbox/1"
 	end
 
+	def jsonify
+		@drawers = Drawer.all.select(:id, :name).as_json
+		@users = User.all.as_json
+		@records = Connection.all.as_json
+		@boxes = Container.all.as_json
+
+		render json:  "{ drawers : #{@drawers}, users : #{@users}, records : #{@records}, boxes : #{@boxes} }"
+	end
+
 end

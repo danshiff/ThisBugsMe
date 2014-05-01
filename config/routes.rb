@@ -6,6 +6,8 @@ ThisBugsMe::Application.routes.draw do
 
   get 'record/:id/newbox/:boxnum' => 'containers#new'
 
+  get '/jsonify' => 'drawers#jsonify'
+
   resources :connections, only: [:destroy]
   resources :containers
   resources :drawers

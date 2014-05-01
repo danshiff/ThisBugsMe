@@ -25,6 +25,7 @@ class ContainersController < ApplicationController
 		@box.in_box_label = params[:container][:in_box_label]
 		@box.on_box_label = params[:container][:on_box_label]
 		@box.near_box_label = params[:container][:near_box_label]
+		@box.max_tags_on_pin = params[:container][:max_tags_on_pin]
 		@box.save
 		redir = params[:commit]
 		if redir == "Add another box"

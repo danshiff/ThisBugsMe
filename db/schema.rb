@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140501180814) do
+ActiveRecord::Schema.define(version: 20140501182747) do
 
   create_table "connections", force: true do |t|
     t.integer  "user_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140501180814) do
     t.string   "on_box_label"
     t.string   "near_box_label"
     t.string   "box_type"
+    t.integer  "max_tags_on_pin"
   end
 
   create_table "drawers", force: true do |t|
