@@ -36,12 +36,12 @@ class DrawersController < ApplicationController
 	end
 
 	def jsonify
-		@drawers = Drawer.all.select(:id, :name).as_json
-		@users = User.all.as_json
-		@records = Connection.all.as_json
-		@boxes = Container.all.as_json
+		@drawers = Drawer.all.select(:id.to_s, :name).to_json
+		@users = User.all.select(:id.to_s, :name).to_json
+		@records = Connection.all.select(:id, :user_id, :drawer_id).to_json
+		@boxes = Container.all.to_json
 
-		render json:  "{ drawers : #{@drawers}, users : #{@users}, records : #{@records}, boxes : #{@boxes} }"
+		render json:  "{ \"drawers\" : #{@drawers}, \"users\" : #{@users}, \"records\" : #{@records}, \"boxes\" : #{@boxes} }"
 	end
 
 end
